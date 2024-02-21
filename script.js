@@ -100,33 +100,38 @@ function getPasswordOptions() {
   }
 
   var useLowercase = confirm("Do you want to include lowercase letters?");
-  if (useLowercase) {
-    password += getRandom(lowerCasedCharacters);
-  }
+
 
   var useUppercase = confirm("Do you want to include uppercase letters?");
-  if (useUppercase) {
-    password += getRandom(upperCasedCharacters);
-  }
+
 
   var useNumbers = confirm("Do you want to include numbers?");
-  if (useNumbers) {
-    password += getRandom(numericCharacters);
-  }
 
   var useSpecialCharacters = confirm("Do you want to include special characters?");
-  if (useSpecialCharacters) {
-    password += getRandom(specialCharacters);
-  }
+
+  generatePassword ();
+  writePassword ();
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
-  arr.split("");
+  return arr.split("");
 }
 
 // Function to generate password with user input
 function generatePassword() {
+  if (useLowercase) {
+    password += getRandom(specialCharacters);
+  }
+  if (useUppercase) {
+    password += getRandom(specialCharacters);
+  }
+  if (useNumbers) {
+    password += getRandom(specialCharacters);
+  }
+  if (useSpecialCharacters) {
+    password += getRandom(specialCharacters);
+  }
 }
 
 // Get references to the #generate element
